@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Archiv</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400..600&family=IBM+Plex+Sans:wght@400;500&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header class="site-header">
+  <h1 class="site-title">Archiv</h1>
+  <p class="site-subtitle">Fotografische &amp; filmische Dokumentation künstlerischer Arbeit</p>
+</header>
+
+<main class="grid" id="grid"></main>
+
+<footer class="site-footer">Zuletzt aktualisiert automatisch — Einträge in data.js</footer>
+
+<script src="data.js"></script>
+<script>
+  const grid = document.getElementById("grid");
+
+  if (!exhibitions || exhibitions.length === 0) {
+    grid.outerHTML = '<p class="empty-state">Noch keine Projekte eingetragen. Ergänze data.js.</p>';
+  } else {
+    exhibitions.forEach((ex, i) => {
+      const card = document.createElement("a");
+      card.className = "card";
+      card.href = `project.html?id=${encodeURIComponent(ex.id)}`;
+      card.style.animationDelay = `${i * 0.05}s`;
+
+      card.innerHTML = `
+        <div class="card-image-wrap">
+          <img src="${ex.cover}" alt="${ex.title}" loading="lazy">
+        </div>
+        <div class="card-label">
+          <span class="card-tag">${ex.year}${ex.place ? " · " + ex.place : ""}</span>
+          <h2 class="card-title">${ex.title}</h2>
+        </div>
+      `;
+      grid.appendChild(card);
+    });
+  }
+</script>
+
+</body>
+</html>
