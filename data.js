@@ -1,38 +1,42 @@
 /*
-  DATENLISTE DER AUSSTELLUNGEN / PROJEKTE
+  SEITENEINSTELLUNGEN UND AUSSTELLUNGSLISTE
   =========================================
-  Hier trägst du jedes neue Projekt als eigenes Objekt in das Array ein.
-  Die Website liest diese Datei automatisch aus – du musst sonst nichts
-  am HTML ändern.
 
-  FELDER:
-  id           – eindeutiger Kurzname, nur Kleinbuchstaben/Bindestriche,
-                 wird Teil der URL (z.B. "ueberwucherung-2026")
-  title        – Titel der Ausstellung/des Projekts
-  year         – Jahr (als Text, z.B. "2026")
-  place        – Ort (optional, kann leer bleiben: "")
-  medium       – Kurzangabe Technik/Material (optional)
-  description  – Fliesstext, ein paar Sätze
-  cover        – Pfad zum Titelbild (liegt in images/<id>/...)
-  images       – Liste aller Bilder dieses Projekts, gleicher Ordner
-  videos       – Liste von YouTube-Video-IDs (NICHT die ganze URL!)
-                 Beispiel: aus https://youtu.be/dQw4w9WgXcQ nimmst du
-                 nur "dQw4w9WgXcQ"
-                 Vimeo geht auch, siehe Beispiel unten (vimeo: true)
+  siteConfig
+  ----------
+  heroImage   – Bild, das rechts auf der Startseite erscheint (fester Pfad)
+  contactHtml – dein Kontakt, erscheint unten links. Kann HTML enthalten,
+                z.B. einen mailto:-Link oder Instagram-Link.
 
-  Reihenfolge im Array = Reihenfolge auf der Startseite.
+  exhibitions
+  -----------
+  Jedes Objekt ist ein Eintrag in der linken Liste, im Format
+  "Titel" at Ort. Beim Anklicken öffnet sich darunter die Dokumentation.
+
+  id           – eindeutiger Kurzname, nur Kleinbuchstaben/Bindestriche
+  title        – Titel der Ausstellung
+  venue        – Ausstellungsort (erscheint nach "at")
+  year         – Jahr, optional, erscheint neben dem Ort
+  description  – Begleittext (optional, leer lassen mit "")
+  images       – Liste der Bildpfade in images/<id>/...
+  videos       – Liste von { id, platform } — platform: "youtube" oder "vimeo"
+
+  Reihenfolge im Array = Reihenfolge in der Liste (neuste zuerst empfohlen).
 */
+
+const siteConfig = {
+  heroImage: "images/hero.jpg",
+  contactHtml: '<a href="mailto:mail@manuelschneider.ch">mail@manuelschneider.ch</a>'
+};
 
 const exhibitions = [
   {
     id: "beispiel-projekt",
-    title: "Beispielprojekt – ersetze mich",
+    title: "Beispielprojekt — ersetze mich",
+    venue: "Kunsthalle Irgendwo",
     year: "2026",
-    place: "Basel",
-    medium: "Collage, Papier, botanisches Material",
     description:
-      "Kurzer Beschreibungstext zu diesem Projekt. Ein bis drei Sätze reichen: worum ging es, welches Material, welcher Anlass.",
-    cover: "images/beispiel-projekt/cover.jpg",
+      "Begleittext zu diesem Projekt. Kann auch leer bleiben, dann erscheint hier nichts.",
     images: [
       "images/beispiel-projekt/01.jpg",
       "images/beispiel-projekt/02.jpg",
@@ -44,6 +48,6 @@ const exhibitions = [
     ]
   }
 
-  // Neues Projekt: Komma nach der schliessenden } oben nicht vergessen,
+  // Neuer Eintrag: Komma nach der schliessenden } oben nicht vergessen,
   // dann hier ein neues { ... } Objekt einfügen.
 ];

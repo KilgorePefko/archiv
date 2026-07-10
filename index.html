@@ -3,45 +3,81 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Archiv</title>
+<title>Manuel Schneider</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400..600&family=IBM+Plex+Sans:wght@400;500&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,wght@0,400;0,500;1,400;1,500&family=IBM+Plex+Sans:wght@400;500&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-<header class="site-header">
-  <h1 class="site-title">Archiv</h1>
-  <p class="site-subtitle">Fotografische &amp; filmische Dokumentation künstlerischer Arbeit</p>
-</header>
+<div class="layout">
 
-<main class="grid" id="grid"></main>
+  <div class="left">
+    <nav class="index-list" id="indexList"></nav>
+    <footer class="contact" id="contact"></footer>
+  </div>
 
-<footer class="site-footer">Zuletzt aktualisiert automatisch — Einträge in data.js</footer>
+  <div class="right">
+    <img id="heroImage" src="" alt="">
+  </div>
+
+</div>
 
 <script src="data.js"></script>
 <script>
-  const grid = document.getElementById("grid");
+  const listEl = document.getElementById("indexList");
+  const heroEl = document.getElementById("heroImage");
+  const contactEl = document.getElementById("contact");
+
+  heroEl.src = siteConfig.heroImage;
+  contactEl.innerHTML = siteConfig.contactHtml;
 
   if (!exhibitions || exhibitions.length === 0) {
-    grid.outerHTML = '<p class="empty-state">Noch keine Projekte eingetragen. Ergänze data.js.</p>';
+    listEl.innerHTML = '<p class="empty-state">Noch keine Ausstellungen eingetragen. Ergänze data.js.</p>';
   } else {
-    exhibitions.forEach((ex, i) => {
-      const card = document.createElement("a");
-      card.className = "card";
-      card.href = `project.html?id=${encodeURIComponent(ex.id)}`;
-      card.style.animationDelay = `${i * 0.05}s`;
+    exhibitions.forEach(ex => {
+      const entry = document.createElement("div");
+      entry.className = "entry";
 
-      card.innerHTML = `
-        <div class="card-image-wrap">
-          <img src="${ex.cover}" alt="${ex.title}" loading="lazy">
-        </div>
-        <div class="card-label">
-          <span class="card-tag">${ex.year}${ex.place ? " · " + ex.place : ""}</span>
-          <h2 class="card-title">${ex.title}</h2>
-        </div>
-      `;
-      grid.appendChild(card);
+      const toggle = document.createElement("button");
+      toggle.className = "entry-toggle";
+      toggle.setAttribute("aria-expanded", "false");
+      toggle.innerHTML = `<span class="entry-title">&ldquo;${ex.title}&rdquo;</span> <span class="entry-at">at</span> <span class="entry-venue">${ex.venue}</span>${ex.year ? `<span class="entry-year">${ex.year}</span>` : ""}`;
+
+      const body = document.createElement("div");
+      body.className = "entry-body";
+
+      let bodyHtml = "";
+      if (ex.description) {
+        bodyHtml += `<p class="entry-description">${ex.description}</p>`;
+      }
+      if (ex.images && ex.images.length) {
+        bodyHtml += `<div class="plates">`;
+        ex.images.forEach((src, i) => {
+          bodyHtml += `<div class="plate"><img src="${src}" alt="${ex.title}, Ansicht ${i + 1}" loading="lazy"></div>`;
+        });
+        bodyHtml += `</div>`;
+      }
+      if (ex.videos && ex.videos.length) {
+        bodyHtml += `<div class="video-list">`;
+        ex.videos.forEach(v => {
+          const embedSrc = v.platform === "vimeo"
+            ? `https://player.vimeo.com/video/${v.id}`
+            : `https://www.youtube-nocookie.com/embed/${v.id}`;
+          bodyHtml += `<div class="video-frame"><iframe src="${embedSrc}" title="Video" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>`;
+        });
+        bodyHtml += `</div>`;
+      }
+      body.innerHTML = `<div class="entry-body-inner">${bodyHtml}</div>`;
+
+      toggle.addEventListener("click", () => {
+        const isOpen = entry.classList.toggle("open");
+        toggle.setAttribute("aria-expanded", String(isOpen));
+      });
+
+      entry.appendChild(toggle);
+      entry.appendChild(body);
+      listEl.appendChild(entry);
     });
   }
 </script>
