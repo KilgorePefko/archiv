@@ -12,9 +12,11 @@
   Mit { spacer: true } fügst du eine Leerzeile ein (z.B. vor "Kontakt",
   falls du dort mal einen eigenen Menüpunkt willst).
 
-  headerImage
-  -----------
-  Kleines Bild ganz oben in der Sidebar, verlinkt zur Startseite.
+  headerName
+  ----------
+  Text ganz oben in der Sidebar, verlinkt zur Startseite (ersetzt das
+  frühere Logo-Bild). Standardmässig "Manuel Schneider" — änderst du
+  direkt unten bei der Zeile, wo <a class="header-name"> steht.
 
   Das grosse Bild auf der Startseite änderst du direkt in index.html
   (dort steht der Bildpfad im <img src="...">).
@@ -25,15 +27,14 @@
   enthalten, z.B. einen mailto:-Link.
 */
 
- const navLinks = [
+const navLinks = [
   { title: "Beispielausstellung", href: "beispielausstellung.html" },
   { title: "Recent Painting", href: "recentpainting.html" }
-];
   // Neue Ausstellung: neue Zeile einfügen, z.B.
   // { title: "Ängstli", href: "aengstli.html" },
   // Komma nach der vorherigen Zeile nicht vergessen.
+];
 
-const headerImage = "images/header.jpg";
 const contactHtml = '<a href="mailto:mail@manuelschneider.ch">mail@manuelschneider.ch</a>';
 
 /* ---- Rendering, muss normalerweise nicht angepasst werden ---- */
@@ -54,9 +55,7 @@ function renderSidebar() {
   root.innerHTML = `
     <div id="sidebar">
       <div class="sidebar-top">
-        <a class="header-image" href="index.html">
-          <img src="${headerImage}" alt="Manuel Schneider">
-        </a>
+        <a class="header-name" href="index.html">Manuel Schneider</a>
         <nav>${linksHtml}</nav>
       </div>
       <footer class="contact">${contactHtml}</footer>
