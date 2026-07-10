@@ -27,7 +27,7 @@
 
  const navLinks = [
   { title: "Beispielausstellung", href: "beispielausstellung.html" },
-  { title: "Recent Painting", href: "recentpainting.html" }
+  { title: "Recent Painting", href: "ausstellungen/recentpainting.html" }
 ];
   // Neue Ausstellung: neue Zeile einfügen, z.B.
   // { title: "Ängstli", href: "aengstli.html" },
