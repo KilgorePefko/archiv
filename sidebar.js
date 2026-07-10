@@ -25,7 +25,6 @@
   enthalten, z.B. einen mailto:-Link.
 */
 
-const navLinks = [
  const navLinks = [
   { title: "Beispielausstellung", href: "beispielausstellung.html" },
   { title: "Recent Painting", href: "recentpainting.html" }
