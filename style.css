@@ -1,165 +1,124 @@
-/* ============================================
-   TOKENS
-   ============================================ */
-:root {
-  --white: #ffffff;
-  --ink: #111111;
-  --ink-soft: #6b6b6b;
-  --line: #e2e2e2;
-  --line-hover: #111111;
-
-  --font-display: "Newsreader", "Times New Roman", serif;
-  --font-body: "IBM Plex Sans", -apple-system, sans-serif;
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-* { box-sizing: border-box; }
-
-html { scroll-behavior: smooth; }
-
 body {
-  margin: 0;
-  background: var(--white);
-  color: var(--ink);
-  font-family: var(--font-body);
-  font-size: 16px;
-  line-height: 1.5;
+  font-family: Arial, sans-serif;
+  background: #fff;
+  color: #000;
 }
 
 a { color: inherit; }
 
 /* ============================================
-   LAYOUT
+   SIDEBAR (fest links, wird per sidebar.js injiziert)
    ============================================ */
-.layout {
-  display: grid;
-  grid-template-columns: 42% 58%;
-  min-height: 100vh;
-}
+#sidebar-root { position: relative; }
 
-.left {
+#sidebar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 280px;
+  height: 100vh;
+  background: #fff;
+  z-index: 100;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  min-height: 100vh;
-  padding: 3rem 3rem 2rem;
 }
 
-.right {
-  position: sticky;
-  top: 0;
-  height: 100vh;
-  background: #f4f4f4;
+.sidebar-top { padding-bottom: 1rem; }
+
+#sidebar .header-image {
+  display: block;
+  width: 280px;
 }
 
-.right img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
+#sidebar .header-image img {
+  width: 280px;
   display: block;
 }
+
+#sidebar nav {
+  padding-left: 20px;
+  padding-top: 0.75rem;
+}
+
+#sidebar nav a,
+#sidebar nav .empty-line {
+  display: block;
+  font-family: Arial, sans-serif;
+  font-size: 15px;
+  font-style: italic;
+  line-height: 1.5;
+  color: #000;
+  text-decoration: none;
+}
+
+#sidebar nav a:hover,
+#sidebar nav a.current {
+  color: #0000EE;
+  text-decoration: underline;
+}
+
+#sidebar .contact {
+  padding: 0 0 1.25rem 20px;
+  font-family: Arial, sans-serif;
+  font-size: 13px;
+  color: #000;
+}
+
+#sidebar .contact a {
+  text-decoration: underline;
+  color: #000;
+}
+
+#sidebar .contact a:hover { color: #0000EE; }
 
 /* ============================================
-   INDEX LIST — ACCORDION
+   CONTENT
    ============================================ */
-.index-list {
-  display: flex;
-  flex-direction: column;
+#content {
+  margin-left: 280px;
+  padding-left: 20px;
+  padding-top: 20px;
+  padding-right: 20px;
+  padding-bottom: 4rem;
 }
 
-.entry {
-  border-top: 1px solid var(--line);
+.type2 {
+  font-family: Arial, sans-serif;
+  font-size: 15px;
+  font-weight: normal;
+  font-style: normal;
+  line-height: 1.1;
+  color: #000;
+  max-width: 400px;
 }
 
-.entry:last-child {
-  border-bottom: 1px solid var(--line);
+.block { margin-bottom: 1.1em; }
+
+.block a {
+  color: #0000EE;
+  text-decoration: underline;
 }
 
-.entry-toggle {
-  all: unset;
-  cursor: pointer;
+.block img {
   display: block;
-  width: 100%;
-  padding: 1.1rem 0;
-  font-family: var(--font-display);
-  font-size: clamp(1.05rem, 1.6vw, 1.3rem);
-  line-height: 1.4;
-  transition: opacity 0.15s ease;
+  width: 800px;
+  max-width: 100%;
 }
 
-.entry-toggle:hover { opacity: 0.6; }
-
-.entry-title {
-  font-style: italic;
-  font-weight: 500;
-}
-
-.entry-at {
-  font-family: var(--font-body);
-  font-size: 0.8em;
-  color: var(--ink-soft);
-  margin: 0 0.15em;
-}
-
-.entry-venue {
-  font-weight: 400;
-}
-
-.entry-year {
-  font-family: var(--font-body);
-  font-size: 0.75em;
-  color: var(--ink-soft);
-  margin-left: 0.6em;
-}
-
-.entry-body {
-  display: grid;
-  grid-template-rows: 0fr;
-  transition: grid-template-rows 0.35s ease;
-}
-
-.entry.open .entry-body {
-  grid-template-rows: 1fr;
-}
-
-.entry-body-inner {
-  overflow: hidden;
-  min-height: 0;
-}
-
-.entry-description {
-  font-size: 0.92rem;
-  color: var(--ink-soft);
-  max-width: 48ch;
-  margin: 0 0 1.25rem;
-}
-
-/* image plates within accordion */
-.plates {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
-  gap: 0.6rem;
-  margin-bottom: 1.5rem;
-}
-
-.plate img {
-  width: 100%;
-  aspect-ratio: 1;
-  object-fit: cover;
-  display: block;
-  background: #f4f4f4;
-}
-
-.video-list {
-  display: grid;
-  gap: 1rem;
-  margin-bottom: 1.5rem;
-}
-
+/* Video-Einbettung, gleiche Spaltenbreite wie Bilder */
 .video-frame {
   position: relative;
-  width: 100%;
+  width: 800px;
+  max-width: 100%;
   aspect-ratio: 16 / 9;
-  background: #111;
+  background: #000;
 }
 
 .video-frame iframe {
@@ -170,64 +129,43 @@ a { color: inherit; }
   border: 0;
 }
 
-.empty-state {
-  color: var(--ink-soft);
-  font-size: 0.9rem;
-  padding: 1rem 0;
+/* Homepage Hero */
+.hero-image img {
+  display: block;
+  width: 800px;
+  max-width: 100%;
 }
 
 /* ============================================
-   CONTACT
+   MOBILE
    ============================================ */
-.contact {
-  font-size: 0.8rem;
-  color: var(--ink-soft);
-  padding-top: 2rem;
-}
-
-.contact a {
-  text-decoration: none;
-  border-bottom: 1px solid var(--line);
-}
-
-.contact a:hover {
-  border-color: var(--ink);
-  color: var(--ink);
-}
-
-/* ============================================
-   ACCESSIBILITY / MOTION
-   ============================================ */
-button:focus-visible {
-  outline: 2px solid var(--ink);
-  outline-offset: 2px;
-}
-
-@media (prefers-reduced-motion: reduce) {
-  .entry-body { transition: none; }
-  html { scroll-behavior: auto; }
-}
-
-/* ============================================
-   RESPONSIVE
-   ============================================ */
-@media (max-width: 860px) {
-  .layout {
-    grid-template-columns: 1fr;
-  }
-
-  .right {
-    order: -1;
+@media (max-width: 600px) {
+  #sidebar {
     position: relative;
-    height: 46vh;
+    width: 100%;
+    height: auto;
+    flex-direction: column;
   }
 
-  .left {
-    min-height: auto;
-    padding: 2rem 1.4rem 2.5rem;
+  #sidebar .header-image,
+  #sidebar .header-image img {
+    width: 200px;
   }
 
-  .entry-toggle {
-    font-size: 1.05rem;
+  #sidebar .sidebar-top { padding: 1rem 0 0.5rem; }
+
+  #sidebar .contact { padding: 0.5rem 0 1.5rem 20px; }
+
+  #content {
+    margin-left: 0;
+    padding-left: 20px;
+    padding-top: 1rem;
+  }
+
+  .type2 { max-width: 100%; }
+
+  .block img,
+  .hero-image img {
+    width: 100%;
   }
 }

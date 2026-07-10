@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Beispielausstellung – Manuel Schneider</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div id="sidebar-root"></div>
+
+<div id="content">
+
+  <!-- Kopfangaben: Name, Titel (kursiv), Datum, Ort -->
+  <div class="block type2">
+    Manuel Schneider<br>
+    <i>Beispielausstellung</i><br>
+    18.4.2026 18–22<br>
+    Auf dem Wolf 11, Basel
+  </div>
+
+  <!-- Begleittext, kann auch weggelassen werden -->
+  <div class="block type2">
+    Kurzer Begleittext zur Ausstellung. Ein bis mehrere Sätze zu Konzept,
+    Material oder Anlass.
+  </div>
+
+  <!-- Optional: Link zu einem PDF mit Ausstellungstext -->
+  <div class="block type2">
+    <a href="ausstellungstext-beispiel.pdf">Ausstellungstext</a>
+  </div>
+
+  <!-- Bilder, einfach weitere .block-Divs mit <img> ergänzen oder entfernen -->
+  <div class="block">
+    <img src="images/beispielausstellung/01.jpg" alt="Ansicht 1">
+  </div>
+  <div class="block">
+    <img src="images/beispielausstellung/02.jpg" alt="Ansicht 2">
+  </div>
+  <div class="block">
+    <img src="images/beispielausstellung/03.jpg" alt="Ansicht 3">
+  </div>
+
+  <!--
+    Video einbetten: YouTube-Link kopieren, z.B. https://youtu.be/dQw4w9WgXcQ
+    -> nur der Teil nach dem letzten "/" ist die ID: dQw4w9WgXcQ
+    Block einfach einkommentieren und ID ersetzen.
+
+  <div class="block video-frame">
+    <iframe src="https://www.youtube-nocookie.com/embed/DEINE-VIDEO-ID"
+      title="Video" loading="lazy"
+      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+      allowfullscreen></iframe>
+  </div>
+
+    Bei Vimeo (https://vimeo.com/76979871) stattdessen:
+    src="https://player.vimeo.com/video/76979871"
+  -->
+
+</div>
+
+<script src="sidebar.js"></script>
+</body>
+</html>
