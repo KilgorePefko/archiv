@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Beispielausstellung – Manuel Schneider</title>
+<title>Ausstellungstitel</title>
 <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -12,40 +12,41 @@
 
 <div id="content">
 
-  <!-- Kopfangaben: Name, Titel (kursiv), Datum, Ort -->
+  <!--
+    EINZELAUSSTELLUNG
+    Aufbau: Titel (kursiv), Ort, Jahr — je eine eigene Zeile.
+  -->
   <div class="block type2">
-    Manuel Schneider<br>
-    <i>Beispielausstellung</i><br>
-    18.4.2026 18–22<br>
-    Auf dem Wolf 11, Basel
+    <i>Ausstellungstitel</i><br>
+    Ausstellungsort<br>
+    Jahr
   </div>
 
-  <!-- Begleittext, kann auch weggelassen werden -->
+  <!-- Begleittext, kann auch weggelassen werden (ganzen Block löschen) -->
   <div class="block type2">
-    Kurzer Begleittext zur Ausstellung. Ein bis mehrere Sätze zu Konzept,
-    Material oder Anlass.
+    Kurzer Begleittext zur Ausstellung.
   </div>
 
   <!-- Optional: Link zu einem PDF mit Ausstellungstext -->
   <div class="block type2">
-    <a href="ausstellungstext-beispiel.pdf">Ausstellungstext</a>
+    <a href="ausstellungstext.pdf">Ausstellungstext</a>
   </div>
 
-  <!-- Bilder, einfach weitere .block-Divs mit <img> ergänzen oder entfernen -->
+  <!-- Bilder: Blöcke duplizieren für mehr, löschen für weniger -->
   <div class="block">
-    <img src="images/beispielausstellung/01.jpg" alt="Ansicht 1">
+    <img src="images/ORDNERNAME/01.jpg" alt="Ansicht 1">
   </div>
   <div class="block">
-    <img src="images/beispielausstellung/02.jpg" alt="Ansicht 2">
+    <img src="images/ORDNERNAME/02.jpg" alt="Ansicht 2">
   </div>
   <div class="block">
-    <img src="images/beispielausstellung/03.jpg" alt="Ansicht 3">
+    <img src="images/ORDNERNAME/03.jpg" alt="Ansicht 3">
   </div>
 
   <!--
     Video einbetten: YouTube-Link kopieren, z.B. https://youtu.be/dQw4w9WgXcQ
     -> nur der Teil nach dem letzten "/" ist die ID: dQw4w9WgXcQ
-    Block einfach einkommentieren und ID ersetzen.
+    Block einkommentieren und ID ersetzen.
 
   <div class="block video-frame">
     <iframe src="https://www.youtube-nocookie.com/embed/DEINE-VIDEO-ID"

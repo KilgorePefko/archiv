@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Werktitel</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div id="sidebar-root"></div>
+
+<div id="content">
+
+  <!--
+    GRUPPENAUSSTELLUNG
+    Aufbau:
+    1. Titel des gezeigten Werks/der gezeigten Werke (kursiv), je eine
+       eigene Zeile — bei nur einem Werk einfach eine Zeile löschen.
+    2. "As part of" + Titel der Gruppenausstellung (kursiv) + Jahr
+    3. "Alongside:" + alle teilnehmenden Künstler:innen, durch Komma
+       getrennt
+  -->
+  <div class="block type2">
+    <i>Werktitel 1</i><br>
+    <i>Werktitel 2</i><br>
+    As part of <i>Titel der Gruppenausstellung</i>, Jahr<br>
+    Alongside: Name A, Name B, Name C
+  </div>
+
+  <!-- Begleittext, kann auch weggelassen werden (ganzen Block löschen) -->
+  <div class="block type2">
+    Kurzer Begleittext zur Ausstellung.
+  </div>
+
+  <!-- Optional: Link zu einem PDF mit Ausstellungstext -->
+  <div class="block type2">
+    <a href="ausstellungstext.pdf">Ausstellungstext</a>
+  </div>
+
+  <!-- Bilder: Blöcke duplizieren für mehr, löschen für weniger -->
+  <div class="block">
+    <img src="images/ORDNERNAME/01.jpg" alt="Ansicht 1">
+  </div>
+  <div class="block">
+    <img src="images/ORDNERNAME/02.jpg" alt="Ansicht 2">
+  </div>
+  <div class="block">
+    <img src="images/ORDNERNAME/03.jpg" alt="Ansicht 3">
+  </div>
+
+  <!--
+    Video einbetten: YouTube-Link kopieren, z.B. https://youtu.be/dQw4w9WgXcQ
+    -> nur der Teil nach dem letzten "/" ist die ID: dQw4w9WgXcQ
+    Block einkommentieren und ID ersetzen.
+
+  <div class="block video-frame">
+    <iframe src="https://www.youtube-nocookie.com/embed/DEINE-VIDEO-ID"
+      title="Video" loading="lazy"
+      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+      allowfullscreen></iframe>
+  </div>
+
+    Bei Vimeo (https://vimeo.com/76979871) stattdessen:
+    src="https://player.vimeo.com/video/76979871"
+  -->
+
+</div>
+
+<script src="sidebar.js"></script>
+</body>
+</html>
