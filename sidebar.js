@@ -32,7 +32,6 @@
   // Neue Ausstellung: neue Zeile einfügen, z.B.
   // { title: "Ängstli", href: "aengstli.html" },
   // Komma nach der vorherigen Zeile nicht vergessen.
-];
 
 const headerImage = "images/header.jpg";
 const contactHtml = '<a href="mailto:mail@manuelschneider.ch">mail@manuelschneider.ch</a>';
