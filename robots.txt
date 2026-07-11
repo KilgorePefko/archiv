@@ -1,0 +1,5 @@
+User-agent: *
+Allow: /
+Disallow: /vorlage-ausstellung.html
+
+Sitemap: https://www.manuelschneider.ch/sitemap.xml
