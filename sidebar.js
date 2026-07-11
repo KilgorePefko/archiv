@@ -30,7 +30,8 @@
 const navLinks = [
   { title: "Concert at hjitp", href: "performancehjitp.html" },
   { title: "ÄNGSTLI", href: "aengstli.html" },
-  { title: "The Living", href: "theliving.html" }
+  { title: "The Living", href: "theliving.html" },
+  { title: "Recent Painting", href: "recentpainting.html" }
   // Neue Ausstellung: neue Zeile einfügen, z.B.
   // { title: "Ängstli", href: "aengstli.html" },
   // Komma nach der vorherigen Zeile nicht vergessen.
