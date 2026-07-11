@@ -38,7 +38,7 @@ const navLinks = [
   // Komma nach der vorherigen Zeile nicht vergessen.
 ];
 
-const contactHtml = '<a href="contact">mail@manuelschneider.ch</a>';
+const contactHtml = '<a href="mailto:mail@manuelschneider.ch">mail@manuelschneider.ch</a>';
 
 /* ---- Rendering, muss normalerweise nicht angepasst werden ---- */
 function renderSidebar() {
