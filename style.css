@@ -118,6 +118,13 @@ a { color: inherit; }
   max-width: 100%;
 }
 
+.caption {
+  margin-top: 0.4em;
+  font-size: 13px;
+  color: #555;
+  max-width: 800px;
+}
+
 /* Video-Einbettung, gleiche Spaltenbreite wie Bilder */
 .video-frame {
   position: relative;
