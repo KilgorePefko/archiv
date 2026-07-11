@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sample & Hold</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div id="sidebar-root"></div>
+
+<div id="content">
+
+  <!--
+    KOPFBLOCK
+    Zeile 1: Ausstellungstitel (kursiv)
+    Zeile 2: Ausstellungsort, Stadt
+    Zeile 3: Jahr
+  -->
+  <div class="block type2">
+    <i>Sample & Hold</i><br>
+    Hobo International, Frankfurt a.M.<br>
+    2024
+  </div>
+
+  <!--
+    NUR BEI GRUPPENAUSSTELLUNGEN — bei Einzelausstellungen diesen
+    ganzen Block löschen.
+  -->
+  <div class="block type2">
+    Alongside: Cyril Tyrone Hübscher
+  </div>
+
+  <!-- Begleittext, kann auch weggelassen werden (ganzen Block löschen) -->
+
+
+  <!-- Optional: Link zu einem PDF mit Ausstellungstext -->
+  <div class="block type2">
+    <a href="ausstellungstext.pdf">Text</a>
+  </div>
+
+  <!--
+    BILDER
+    Blöcke duplizieren für mehr, löschen für weniger.
+    Die Bildunterschrift (Titel, Jahr / Material / Grösse) ist optional
+    — die <p class="caption">-Zeile einfach löschen, falls nicht
+    gebraucht, z.B. bei reinen Installationsansichten.
+    Schema: Titel (kursiv), Jahr / Material 1, Material 2 / BxHxT
+  -->
+  <div class="block">
+    <img src="images/samplehold/01.jpg" alt="Ansicht 1">
+    <p class="caption type2"><i>Taabo</i>, 2024 / Wood, cord, Lacquer on paper, xylophone, drum sticks / 300 x 55 x 70 cm</p>
+  </div>
+  <div class="block">
+    <img src="images/samplehold/02.jpg" alt="Ansicht 2">
+  </div>
+  <div class="block">
+    <img src="images/samplehold/03.jpg" alt="Ansicht 3">
+  </div>
+  <div class="block">
+    <img src="images/samplehold/04.jpg" alt="Ansicht 4">
+  </div>
+  <div class="block">
+    <img src="images/samplehold/05.jpg" alt="Ansicht 5">
+  </div>
+  <div class="block">
+    <img src="images/samplehold/06.jpg" alt="Ansicht 6">
+  </div>
+  <div class="block">
+    <img src="images/samplehold/07.jpg" alt="Ansicht 7">
+  </div>
+  <div class="block">
+    <img src="images/samplehold/08.jpg" alt="Ansicht 8">
+  </div>
+  <div class="block">
+    <img src="images/samplehold/09.jpg" alt="Ansicht 9">
+  </div>
+  <div class="block">
+    <img src="images/samplehold/10.jpg" alt="Ansicht 10">
+  </div>
+  <div class="block">
+    <img src="images/samplehold/11.jpg" alt="Ansicht 11">
+  </div>
+  <div class="block">
+    <img src="images/samplehold/12.jpg" alt="Ansicht 12">
+   <p class="caption type2"><i>Views</i>, 2024 / 30 min., loop / Dimensions variable</p>
+  </div>
+
+
+  <!--
+    Video einbetten: YouTube-Link kopieren, z.B. https://youtu.be/dQw4w9WgXcQ
+    -> nur der Teil nach dem letzten "/" ist die ID: dQw4w9WgXcQ
+    Block einkommentieren und ID ersetzen.
+
+  <div class="block video-frame">
+    <iframe src="https://www.youtube-nocookie.com/embed/DEINE-VIDEO-ID"
+      title="Video" loading="lazy"
+      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+      allowfullscreen></iframe>
+  </div>
+
+    Bei Vimeo (https://vimeo.com/76979871) stattdessen:
+    src="https://player.vimeo.com/video/76979871"
+  -->
+
+</div>
+
+<script src="sidebar.js"></script>
+</body>
+</html>
