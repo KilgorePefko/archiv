@@ -28,6 +28,7 @@
 */
 
 const navLinks = [
+  { title: "Concert at hjitp", href: "performancehjitp.html" },
   { title: "ÄNGSTLI", href: "aengstli.html" },
   { title: "The Living", href: "theliving.html" }
   // Neue Ausstellung: neue Zeile einfügen, z.B.
