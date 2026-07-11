@@ -177,10 +177,11 @@ a { color: inherit; }
   .type2,
   .caption { max-width: calc(100% - 20px); }
 
-  /* Fotos füllen die Bildschirmbreite komplett, unabhängig vom
-     Text-Einzug links (der für Navigation und Textblöcke bleibt) */
+  /* Fotos und Videos füllen die Bildschirmbreite komplett, unabhängig
+     vom Text-Einzug links (der für Navigation und Textblöcke bleibt) */
   .block img,
-  .hero-image img {
+  .hero-image img,
+  .video-frame {
     width: 100vw;
     max-width: 100vw;
     margin-left: -20px;
