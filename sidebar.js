@@ -28,7 +28,7 @@
 */
 
 const navLinks = [
-  { title: "Concert at hjitp", href: "performancehjitp.html" },
+  { title: "Concert at Hjitp", href: "performancehjitp.html" },
   { title: "ÄNGSTLI", href: "aengstli.html" },
   { title: "The Living", href: "theliving.html" },
   { title: "Recent Painting", href: "recentpainting.html" },
