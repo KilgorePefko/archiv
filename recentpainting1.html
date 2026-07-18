@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<!-- Titel unten UND Meta-Description ersetzen — nicht den Platzhaltertext stehen lassen! -->
+<title>Recent Painting — Manuel Schneider</title>
+<meta name="description" content="Recent Painting, group exhibition with Manuel Schneider, Basel, 2024.">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div id="sidebar-root"></div>
+
+<div id="content">
+
+  <!--
+    KOPFBLOCK
+    Zeile 1: Ausstellungstitel (kursiv)
+    Zeile 2: Ausstellungsort, Stadt
+    Zeile 3: Jahr
+  -->
+  <div class="block type2">
+    <i>Recent Painting</i><br>
+    Amerbachstrasse 87, Basel<br>
+    2024
+  </div>
+
+  <!--
+    NUR BEI GRUPPENAUSSTELLUNGEN — bei Einzelausstellungen diesen
+    ganzen Block löschen.
+  -->
+  <div class="block type2">
+    Alongside: Golnaz Hosseini, David Karl Max, Anastasia Pavlou, Diogo Pinto, Michael Ray-Von
+  </div>
+
+  <!-- Begleittext, kann auch weggelassen werden (ganzen Block löschen) -->
+
+
+
+
+  <!--
+    BILDER
+    Blöcke duplizieren für mehr, löschen für weniger.
+    Die Bildunterschrift (Titel, Jahr / Material / Grösse) ist optional
+    — die <p class="caption">-Zeile einfach löschen, falls nicht
+    gebraucht, z.B. bei reinen Installationsansichten.
+    Schema: Titel (kursiv), Jahr / Material 1, Material 2 / BxHxT
+  -->
+  <div class="block">
+    <img src="images/recentpainting1/recentpainting1-manuel-schneider01.jpg" alt="Recent Painting, Manuel Schneider, Untitled, 2024">
+    <p class="caption type2"><i>Untitled</i>, 2024 / Spraypaint, oil & wood on board / 110 x 70 cm</p>
+  </div>
+  <div class="block">
+    <img src="images/recentpainting1/recentpainting1-manuel-schneider02.jpg" alt="Recent Painting, Manuel Schneider, Untitled, 2024">
+    <p class="caption type2"><i>Danke An Das Team</i>, 2024 / Coated MDF, screws, marks of detonated fireworks / 20 x 45 x 1 cm</p>
+  </div>
+  <div class="block">
+    <img src="images/recentpainting1/recentpainting1-manuel-schneider03.jpg" alt="Recent Painting, Manuel Schneider, 2024">
+  </div>
+    <div class="block">
+    <img src="images/recentpainting1/recentpainting1-manuel-schneider04.jpg" alt="Recent Painting, Manuel Schneider, Untitled, 2024">
+  </div>
+    <div class="block">
+    <img src="images/recentpainting1/recentpainting1-manuel-schneider05.jpg" alt="Recent Painting, Manuel Schneider, Untitled, 2024">
+  </div>
+    <div class="block">
+    <img src="images/recentpainting1/recentpainting1-manuel-schneider06.jpg" alt="Recent Painting, Manuel Schneider, Danke An Das Team, 2024">
+  </div>
+
+  <!-- Fotocredit: bezieht sich auf alle Bilder oben, kann auch weggelassen werden -->
+  <div class="block type2">
+    Photos: Michael Ray-Von
+  </div>
+
+  <!--
+    Video einbetten: YouTube-Link kopieren, z.B. https://youtu.be/dQw4w9WgXcQ
+    -> nur der Teil nach dem letzten "/" ist die ID: dQw4w9WgXcQ
+    Block einkommentieren und ID ersetzen.
+
+  <div class="block video-frame">
+    <iframe src="https://www.youtube-nocookie.com/embed/DEINE-VIDEO-ID"
+      title="Video" loading="lazy"
+      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+      allowfullscreen></iframe>
+  </div>
+
+    Bei Vimeo (https://vimeo.com/76979871) stattdessen:
+    src="https://player.vimeo.com/video/76979871"
+  -->
+
+</div>
+
+<script src="sidebar.js"></script>
+</body>
+</html>
+
+<!--
+  NICHT VERGESSEN, ausserhalb dieser Datei:
+  1. In sidebar.js bei navLinks eine neue Zeile mit Titel + Dateiname
+     dieser Seite ergänzen.
+  2. In sitemap.xml einen neuen <url><loc>...</loc></url>-Eintrag mit
+     der Adresse dieser Seite ergänzen.
+  Siehe ablaufplan-neue-ausstellung.md für die komplette Checkliste.
+-->
