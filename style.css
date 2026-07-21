@@ -74,16 +74,19 @@ a { color: inherit; }
 #sidebar .contact {
   padding: 0 0 1.25rem 20px;
   font-family: "Times New Roman", Times, serif;
-  font-size: 13px;
+  font-size: 15px;
   color: #000;
 }
 
 #sidebar .contact a {
-  text-decoration: underline;
+  text-decoration: none;
   color: #000;
 }
 
-#sidebar .contact a:hover { color: #0000EE; }
+#sidebar .contact a:hover {
+  color: #0000EE;
+  text-decoration: underline;
+}
 
 /* ============================================
    CONTENT
