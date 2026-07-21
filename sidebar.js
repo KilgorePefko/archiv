@@ -34,7 +34,8 @@ const navLinks = [
   { title: "Recent Painting 2", href: "recentpainting.html" },
   { title: "Sample & Hold", href: "samplehold.html" },
   { title: "Stardust", href: "stardust.html" },
-  { title: "Recent Painting 1", href: "recentpainting1.html" }
+  { title: "Recent Painting 1", href: "recentpainting1.html" },
+  { title: "Personal Beliefs Of Geography", href: "personalbeliefs.html" }
   // Neue Ausstellung: neue Zeile einfügen, z.B.
   // { title: "Ängstli", href: "aengstli.html" },
   // Komma nach der vorherigen Zeile nicht vergessen.
